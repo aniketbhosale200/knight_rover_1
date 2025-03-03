@@ -1,0 +1,787 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="knight_rover_new">
+  <link name="robot_base_link">
+    <inertial>
+      <origin
+        xyz="-3.51409534725501E-05 2.02030762991075E-17 0.054452787160501"
+        rpy="0 0 0" />
+      <mass
+        value="35.9333306293393" />
+      <inertia
+        ixx="0.829440467624282"
+        ixy="-3.19664415872315E-17"
+        ixz="-1.261122050565E-05"
+        iyy="1.26474036562949"
+        iyz="9.12630764099463E-18"
+        izz="2.0232174193065" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/robot_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/robot_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_suspension">
+    <inertial>
+      <origin
+        xyz="1.72685688207314E-16 -0.0768469466497054 -0.00596606384240272"
+        rpy="0 0 0" />
+      <mass
+        value="2.09033981771279" />
+      <inertia
+        ixx="0.0143822425075524"
+        ixy="2.13129130361425E-17"
+        ixz="-3.55136708633844E-18"
+        iyy="0.151071620854433"
+        iyz="-3.98388809734623E-05"
+        izz="0.164728757444313" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh 
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/left_suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/left_suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="left_suspension_joint"
+    type="revolute">
+    <origin
+      xyz="-2.9695701971535E-05 0.301625 0.054456965"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="left_suspension" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.1722"
+      upper="0.1722"
+      effort="11"
+      velocity="2" />
+  </joint>
+  <link name="F_shaft_LR">
+    <inertial>
+      <origin
+        xyz="-0.000275564760709279 -0.000548784014590159 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0732032651136589" />
+      <inertia
+        ixx="0.000144362575624441"
+        ixy="1.94226191261808E-07"
+        ixz="-2.41141585894578E-21"
+        iyy="0.0001446518466667"
+        iyz="1.85180087888106E-21"
+        izz="5.64751116677257E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/F_shaft_LR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/F_shaft_LR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="F_shaft_LR_joint"
+    type="continuous">
+    <origin
+      xyz="0.433046617948688 -0.235688617948681 -0.00635000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="left_suspension" />
+    <child
+      link="F_shaft_LR" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link name="FL_wheel_LR">
+    <inertial>
+      <origin
+        xyz="-0.00728768342739827 -0.0146448321390538 0.00050848063236375"
+        rpy="0 0 0" />
+      <mass
+        value="0.549396445319131" />
+      <inertia
+        ixx="0.000445171241559337"
+        ixy="9.78659019529863E-05"
+        ixz="-6.94813455862534E-07"
+        iyy="0.000593200318687097"
+        iyz="3.02640502246261E-07"
+        izz="0.000936282884274775" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FL_wheel_LR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FL_wheel_LR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="FL_wheel_LR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0635000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="F_shaft_LR" />
+    <child
+      link="FL_wheel_LR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="FR_wheel_LR">
+    <inertial>
+      <origin
+        xyz="0.00740533402318116 0.0146161440808339 -0.000508480759078611"
+        rpy="0 0 0" />
+      <mass
+        value="0.549396404481812" />
+      <inertia
+        ixx="0.000446634643970396"
+        ixy="9.8954363392273E-05"
+        ixz="6.92370335923828E-07"
+        iyy="0.000591737101133644"
+        iyz="-3.07507000713996E-07"
+        izz="0.000936283087584822" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FR_wheel_LR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FR_wheel_LR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="FR_wheel_LR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="F_shaft_LR" />
+    <child
+      link="FR_wheel_LR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="B_shaft_LR">
+    <inertial>
+      <origin
+        xyz="-0.000102000774275024 -0.000605554022413884 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0732032651136589" />
+      <inertia
+        ixx="0.000144278410024616"
+        ixy="7.93302867395647E-08"
+        ixz="-1.70773371535388E-20"
+        iyy="0.000144736012266526"
+        iyz="4.51423547668717E-21"
+        izz="5.64751116677256E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/B_shaft_LR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/B_shaft_LR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="B_shaft_LR_joint"
+    type="continuous">
+    <origin
+      xyz="-0.433046617948688 -0.235688617948681 -0.00635000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="left_suspension" />
+    <child
+      link="B_shaft_LR" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link name="BL_wheel_LR">
+    <inertial>
+      <origin
+        xyz="0.00266350646928726 0.0161679555464226 0.000510210330815108"
+        rpy="0 0 0" />
+      <mass
+        value="0.547534762417823" />
+      <inertia
+        ixx="0.000399445213010371"
+        ixy="3.90952412727286E-05"
+        ixz="-7.49471063720292E-07"
+        iyy="0.000630414635441886"
+        iyz="8.43333194813395E-08"
+        izz="0.000927863923073197" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BL_wheel_LR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BL_wheel_LR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="BL_wheel_LR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="B_shaft_LR" />
+    <child
+      link="BL_wheel_LR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="BR_wheel_LR">
+    <inertial>
+      <origin
+        xyz="-0.00277533864218887 -0.0161213368308621 -0.000510210708511649"
+        rpy="0 0 0" />
+      <mass
+        value="0.54753441534668" />
+      <inertia
+        ixx="0.000400031841409848"
+        ixy="4.07852011130894E-05"
+        ixz="7.48566841143591E-07"
+        iyy="0.000629826877269507"
+        iyz="-8.96933677215981E-08"
+        izz="0.00092786281766356" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BR_wheel_LR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BR_wheel_LR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="BR_wheel_LR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="B_shaft_LR" />
+    <child
+      link="BR_wheel_LR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="right_suspension">
+    <inertial>
+      <origin
+        xyz="5.94858130497897E-17 -0.0768469466497054 0.00596606384240278"
+        rpy="0 0 0" />
+      <mass
+        value="2.09033981771279" />
+      <inertia
+        ixx="0.0143822425075524"
+        ixy="9.36229739103627E-19"
+        ixz="-3.76479445289107E-19"
+        iyy="0.151071620854433"
+        iyz="3.98388809734629E-05"
+        izz="0.164728757444313" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/right_suspension.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/right_suspension.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="right_suspension_joint"
+    type="revolute">
+    <origin
+      xyz="-2.96957019715361E-05 -0.301625 0.054456965"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="right_suspension" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.1722"
+      upper="0.1722"
+      effort="11"
+      velocity="2" />
+    <mimic
+      joint="left_suspension_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link name="FR_shaft_RR">
+    <inertial>
+      <origin
+        xyz="0.000533453219315305 0.0003041833243565 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0732032651136589" />
+      <inertia
+        ixx="0.000144630537335569"
+        ixy="2.08408008974911E-07"
+        ixz="-1.51404603547328E-20"
+        iyy="0.000144383884955572"
+        iyz="-1.06677612253128E-20"
+        izz="5.64751116677257E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FR_shaft_RR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FR_shaft_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="FR_shaft_RR_joint"
+    type="continuous">
+    <origin
+      xyz="0.433046617948687 -0.235688617948681 0.00635000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="right_suspension" />
+    <child
+      link="FR_shaft_RR" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link name="FR_wheel_RR">
+    <inertial>
+      <origin
+        xyz="0.0142396465975015 0.00805182697412571 -0.000510211445635955"
+        rpy="0 0 0" />
+      <mass
+        value="0.547533595882271" />
+      <inertia
+        ixx="0.000577783923555976"
+        ixy="0.000104467055038999"
+        ixz="-4.04206874654229E-07"
+        iyy="0.000452071101419828"
+        iyz="6.36410608409607E-07"
+        izz="0.000927859172549869" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FR_wheel_RR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FR_wheel_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="FR_wheel_RR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="FR_shaft_RR" />
+    <child
+      link="FR_wheel_RR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="FL_wheel_RR">
+    <inertial>
+      <origin
+        xyz="-0.0142050302316768 -0.00816775289066476 0.000510211625356249"
+        rpy="0 0 0" />
+      <mass
+        value="0.547533424682197" />
+      <inertia
+        ixx="0.000576245395570839"
+        ixy="0.000105376555008215"
+        ixz="4.0892733889422E-07"
+        iyy="0.00045360914424117"
+        iyz="-6.33718153793749E-07"
+        izz="0.000927858700994071" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FL_wheel_RR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/FL_wheel_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="FL_wheel_RR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0634999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="FR_shaft_RR" />
+    <child
+      link="FL_wheel_RR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="BR_shaft_RR">
+    <inertial>
+      <origin
+        xyz="-0.00055158733402455 0.000269909697784398 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0732032651136588" />
+      <inertia
+        ixx="0.000144655808484728"
+        ixy="-1.91212128642016E-07"
+        ixz="-3.56423135935016E-22"
+        iyy="0.000144358613806413"
+        iyz="-8.23017532900926E-22"
+        izz="5.64751116677256E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BR_shaft_RR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BR_shaft_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="BR_shaft_RR_joint"
+    type="continuous">
+    <origin
+      xyz="-0.433046617948688 -0.235688617948681 0.00635000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="right_suspension" />
+    <child
+      link="BR_shaft_RR" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link name="BL_wheel_RR">
+    <inertial>
+      <origin
+        xyz="-0.0147189689674223 0.00713677642674698 0.000508480579083342"
+        rpy="0 0 0" />
+      <mass
+        value="0.54939649950203" />
+      <inertia
+        ixx="0.000595196553459929"
+        ixy="-9.63239653984878E-05"
+        ixz="2.95483114421503E-07"
+        iyy="0.00044317521459507"
+        iyz="6.97887531231998E-07"
+        izz="0.000936283088752324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BL_wheel_RR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BL_wheel_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="BL_wheel_RR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="BR_shaft_RR" />
+    <child
+      link="BL_wheel_RR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="BR_wheel_RR">
+    <inertial>
+      <origin
+        xyz="0.0146914842574465 -0.00725471731387628 -0.000508480710717518"
+        rpy="0 0 0" />
+      <mass
+        value="0.549396458332006" />
+      <inertia
+        ixx="0.000593755941394788"
+        ixy="-9.74422821912464E-05"
+        ixz="-3.00374468849649E-07"
+        iyy="0.00044461602097348"
+        iyz="-6.95494593025691E-07"
+        izz="0.000936283302375973" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BR_wheel_RR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/imbatman/ros2_ws/src/knight_rover_1/knight_rover_new/meshes/BR_wheel_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint  name="BR_wheel_RR_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0635000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="BR_shaft_RR" />
+    <child
+      link="BR_wheel_RR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+ 
+  <link name="base_footprint"/>
+  <link name="odom"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="robot_base_link"/>
+    <origin xyz=" 0 0 0.1" rpy="0 0 0 "/>
+  </joint>
+
+  <joint name="odom_joint" type="fixed">
+    <parent link="odom"/>
+    <child link="base_footprint"/>
+    <origin xyz=" 0 0 0" rpy="0 0 0 "/>
+  </joint>
+
+
+</robot>
