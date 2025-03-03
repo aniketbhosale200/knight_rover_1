@@ -1,0 +1,838 @@
+ <link name="arm_base_link">
+    <inertial>
+      <origin
+        xyz="-0.000473337349444795 -1.32028098241101E-05 0.07239105763563"
+        rpy="0 0 0" />
+      <mass
+        value="1.14215420338987" />
+      <inertia
+        ixx="0.00307129989590757"
+        ixy="-8.29782523845811E-07"
+        ixz="-2.69723152811921E-05"
+        iyy="0.00309572763575694"
+        iyz="-7.52339424710022E-07"
+        izz="0.00142221302621762" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/arm_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/arm_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_base_joint"
+    type="fixed">
+    <origin
+      xyz="-2.96957019715774E-05 0 0.10891393"
+      rpy="0 0 0" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="arm_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.0001609257749607 0.0016542486333322 0.0894306454282655"
+        rpy="0 0 0" />
+      <mass
+        value="1.30372267937163" />
+      <inertia
+        ixx="0.00388797981373484"
+        ixy="-4.73943654259568E-05"
+        ixz="-2.12784263562036E-05"
+        iyy="0.00340484821040031"
+        iyz="-0.000218825448076133"
+        izz="0.00196023593370379" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.149"
+      rpy="0 0 0" />
+    <parent
+      link="arm_base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="11"
+      velocity="2" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="0.00515267177632115 -0.162155426957025 -0.048697506888309"
+        rpy="0 0 0" />
+      <mass
+        value="2.97373660813915" />
+      <inertia
+        ixx="0.032416697732786"
+        ixy="0.00297980399851198"
+        ixz="-0.00041796955080189"
+        iyy="0.00996767728350598"
+        iyz="-0.00718854693664985"
+        izz="0.0278574206306726" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.00584283433916443 0.0601167305072813 0.12"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="-0.0967356678669598 0 -0.995310107736445" />
+    <limit
+      lower="-2.059"
+      upper="2.059"
+      effort="11"
+      velocity="2" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.0630408577620157 0.0757694506885519 -0.0147646662260461"
+        rpy="0 0 0" />
+      <mass
+        value="1.45765626348279" />
+      <inertia
+        ixx="0.00668130977477114"
+        ixy="-0.0017929100891192"
+        ixz="0.00110761054523779"
+        iyy="0.00505646223490394"
+        iyz="0.00210611297284855"
+        izz="0.00576711229445793" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0.0530599818434298 -0.28455 -0.00515697845398792"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="-0.0967356678669596 0 -0.995310107736445" />
+    <limit
+      lower="0"
+      upper="3.8"
+      effort="11"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="0.00285172535182038 -0.0260073155743561 0.128071893533833"
+        rpy="0 0 0" />
+      <mass
+        value="0.681236676221464" />
+      <inertia
+        ixx="0.00500336376207618"
+        ixy="2.58052982633528E-05"
+        ixz="-2.97058981973094E-05"
+        iyy="0.00481793575641137"
+        iyz="0.000400073672270465"
+        izz="0.000727383593164867" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0.078973918363873 0.16627 -0.0599206159702666"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="11"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="0.0291584974688695 0.0507749995598583 0.0128930762141088"
+        rpy="0 0 0" />
+      <mass
+        value="0.669420417496551" />
+      <inertia
+        ixx="0.00103371860797553"
+        ixy="-0.000251634699326582"
+        ixz="5.62375875106098E-05"
+        iyy="0.00090602726270936"
+        iyz="0.000124543757130044"
+        izz="0.00143040032372536" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="-0.000821285820190393 0.00845018281468242 0.205"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0.09673566786696 0 -0.995310107736445" />
+    <limit
+      lower="-0.83"
+      upper="2.9"
+      effort="11"
+      velocity="2" />
+  </joint>
+  <link
+    name="end_effector">
+    <inertial>
+      <origin
+        xyz="1.79542801708177E-05 -0.000122480752124877 0.00960614744993991"
+        rpy="0 0 0" />
+      <mass
+        value="0.0806378641781996" />
+      <inertia
+        ixx="3.24265145588332E-05"
+        ixy="8.12727483201834E-08"
+        ixz="-8.01864845180532E-10"
+        iyy="3.18840006785951E-05"
+        iyz="5.47017248285367E-09"
+        izz="5.90805865629779E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/end_effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/end_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_effector_joint"
+    type="revolute">
+    <origin
+      xyz="0.0877509500734849 0.0490789751008789 0.0135522051433748"
+      rpy="1.47993501318796 -0.0336819095690923 1.21676367586924" />
+    <parent
+      link="link_5" />
+    <child
+      link="end_effector" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="11"
+      velocity="2" />
+  </joint>
+  <link
+    name="gripper_base">
+    <inertial>
+      <origin
+        xyz="7.27866725197535E-06 -2.54134234375925E-06 0.0440536598355999"
+        rpy="0 0 0" />
+      <mass
+        value="0.144340160157627" />
+      <inertia
+        ixx="0.00022110868647519"
+        ixy="-3.32359338153028E-09"
+        ixz="1.70035374836469E-08"
+        iyy="0.000148303075670179"
+        iyz="-5.93033833517005E-09"
+        izz="0.000101455826246438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/gripper_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/gripper_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0171450000000004"
+      rpy="0 0 0.145551942518358" />
+    <parent
+      link="end_effector" />
+    <child
+      link="gripper_base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gripper_right_arm">
+    <inertial>
+      <origin
+        xyz="0.0415392668558663 -0.0199023574393599 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0127678157416076" />
+      <inertia
+        ixx="1.42841391003647E-06"
+        ixy="2.20816118501854E-06"
+        ixz="2.69991751937308E-21"
+        iyy="8.84983688817006E-06"
+        iyz="2.64697796016969E-22"
+        izz="1.00683678618661E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/gripper_right_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/gripper_right_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_right_arm_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.016625 0.048875"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="gripper_base" />
+    <child
+      link="gripper_right_arm" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.22"
+      upper="3"
+      effort="11"
+      velocity="2" />
+  </joint>
+  <link
+    name="right_finger">
+    <inertial>
+      <origin
+        xyz="0.0276161455829338 0.0142289865971562 4.20508949883214E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111036338959234" />
+      <inertia
+        ixx="6.54555696498017E-07"
+        ixy="-5.41073231378124E-07"
+        ixz="1.56574589927725E-12"
+        iyy="2.80864975234194E-06"
+        iyz="-6.43183218014042E-14"
+        izz="2.90512975962861E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/right_finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/right_finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_finger_joint"
+    type="fixed">
+    <origin
+      xyz="0.0760387769781833 -0.0126821318025069 0"
+      rpy="0 0 0" />
+    <parent
+      link="gripper_right_arm" />
+    <child
+      link="right_finger" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gripper_left_arm">
+    <inertial>
+      <origin
+        xyz="0.0415392668558661 0.0199023574393599 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0127678157416076" />
+      <inertia
+        ixx="1.42841391003647E-06"
+        ixy="-2.20816118501855E-06"
+        ixz="3.20284333180532E-21"
+        iyy="8.84983688817007E-06"
+        iyz="6.61744490042422E-22"
+        izz="1.00683678618661E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/gripper_left_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/gripper_left_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_left_arm_joint"
+    type="revolute">
+    <origin
+      xyz="0.00500000000000006 -0.016625 0.0488750000000002"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="gripper_base" />
+    <child
+      link="gripper_left_arm" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3"
+      upper="1.22"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="gripper_right_arm_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="left_finger">
+    <inertial>
+      <origin
+        xyz="0.0276961872778644 -0.0140725491537091 -7.52747492116512E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111036375733557" />
+      <inertia
+        ixx="6.48503874948729E-07"
+        ixy="5.28854334276947E-07"
+        ixz="-1.95043967790815E-12"
+        iyy="2.81470284721791E-06"
+        iyz="6.03559944540348E-14"
+        izz="2.90513051280574E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/left_finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/left_finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_finger_joint"
+    type="fixed">
+    <origin
+      xyz="0.0760387769781832 0.012682131802507 -0.00500000000000006"
+      rpy="0 0 0" />
+    <parent
+      link="gripper_left_arm" />
+    <child
+      link="left_finger" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-17 -0.00860207027365847"
+        rpy="0 0 0" />
+      <mass
+        value="0.00851529124922691" />
+      <inertia
+        ixx="5.72032823016265E-07"
+        ixy="2.9778502051909E-22"
+        ixz="-1.05879118406788E-22"
+        iyy="5.72032823016265E-07"
+        iyz="2.11758236813575E-22"
+        izz="8.87510252850142E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camrea_joint"
+    type="fixed">
+    <origin
+      xyz="0.0328520109999999 0 0.0625450000000001"
+      rpy="0 0 0" />
+    <parent
+      link="gripper_base" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="0 3.74404642547556E-18 -0.0135429497587381"
+        rpy="0 0 0" />
+      <mass
+        value="0.0474826021016631" />
+      <inertia
+        ixx="1.25526394009055E-05"
+        ixy="-8.964432025108E-23"
+        ixz="-5.16987882845643E-23"
+        iyy="1.25526394009055E-05"
+        iyz="3.79483572484895E-22"
+        izz="1.58293239284705E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.29512 0 0.1432"
+      rpy="0 0 0" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="robot_camera">
+    <inertial>
+      <origin
+        xyz="-0.0116366746085131 -3.63403427407853E-18 -5.38110887772951E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.0184463231950522" />
+      <inertia
+        ixx="4.51140005391572E-06"
+        ixy="-1.20361288382287E-22"
+        ixz="5.62966126881018E-23"
+        iyy="1.32731162797296E-06"
+        iyz="5.27451670258981E-39"
+        izz="3.97038118053296E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/robot_camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://knight_rover_new/meshes/robot_camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="robot_camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.339568304298028 0 0.054456965"
+      rpy="0 0 0" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="robot_camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
